@@ -237,13 +237,9 @@ def calcular_orcamento(request):
 
                     perfil = "48"
 
-                elif altura <= 3.00:
-
-                    perfil = "70"
-
                 else:
 
-                    perfil = "90"
+                    perfil = "70"
 
                 # ----------------------------------
                 # PLACA ESCOLHIDA
@@ -269,19 +265,34 @@ def calcular_orcamento(request):
                 # CÁLCULOS
                 # ----------------------------------
 
-                chapas = round(area * coef_placa, 2)
-
-                montantes = round(area * 0.766, 2)
-
-                guias = round(area * 0.233, 2)
-
-                fita = round(area * 0.0325, 2)
-
-                parafuso_13 = round(area * 0.020, 2)
-
-                parafuso_25 = round(area * 0.025, 2)
+                chapas= math.ceil(area * coef_placa) * 2
                 
-                massa_kg = round(area * 1.2, 2)
+
+                montantes = math.ceil(area * 0.766)
+
+                guias = math.ceil(area * 0.233)
+
+                fita = math.ceil(area * 0.0325)
+
+                parafuso_13_real = montantes * 4
+
+                parafuso_13 = max(1, math.ceil(parafuso_13_real / 100))
+
+                parafuso_25 = math.ceil((chapas * 40) / 100)
+                
+                massa_kg = math.ceil(area * 1.2)
+                
+                if massa_kg <= 6:
+                    massa_nome = "Massa Pronta 6kg"
+                    massa_qtd = 1
+
+                elif massa_kg <= 14:
+                    massa_nome = "Massa Pronta 14kg"
+                    massa_qtd = 1
+
+                else:
+                    massa_nome = "Massa Pronta 25kg"
+                    massa_qtd = math.ceil(massa_kg / 25)
 
                 # ----------------------------------
                 # LISTA FINAL
@@ -295,28 +306,28 @@ def calcular_orcamento(request):
                     },
 
                     {
-                        "nome": f"Montante M {perfil}",
+                        "nome": f"Montante M{perfil}",
                         "quantidade": f"{montantes} barras"
                     },
 
                     {
-                        "nome": f"Guia R {perfil}",
+                        "nome": f"Guia G{perfil}",
                         "quantidade": f"{guias} barras"
                     },
 
                     {
-                        "nome": "Fita Telada",
+                        "nome": "Fita Telada 90m",
                         "quantidade": f"{fita} rolo"
                     },
 
                     {
-                        "nome": "Parafuso PA 13mm",
-                        "quantidade": f"{parafuso_13} caixa"
+                         "nome": "Parafuso PA 13mm",
+                        "quantidade": f"{parafuso_13} cento(s)"
                     },
 
                     {
                         "nome": "Parafuso GN 25mm",
-                        "quantidade": f"{parafuso_25} caixa"
+                        "quantidade": f"{parafuso_25} cento(s)"
                     },
                 ]
 
@@ -366,27 +377,43 @@ def calcular_orcamento(request):
                 # CÁLCULOS
                 # ----------------------------------
 
-                perfil_f530 = round(area * 0.60, 2)
+                perfil_f530 = math.ceil(area * 0.60)
 
-                placas = round(area * coef_placa, 2)
+                placas = math.ceil(area * coef_placa)
 
-                tabica = round(area * 0.35, 2)
+                tabica = math.ceil(area * 0.35)
 
-                fita = round(area * 0.016, 2)
+                fita = math.ceil(area * 0.016)
 
-                parafuso_13 = round(area * 0.014, 2)
+                #----------------------------------
+                # 0,5 parafusos por m²
+                # multiplicado por dupla fixação
 
-                parafuso_25 = round(area * 0.012, 2)
+                parafuso_13_real = (area * 0.5) * 2
+                parafuso_13 = math.ceil(parafuso_13_real)
+                # ----------------------------------
+                # 40 parafusos GN25 por chapa
+                parafuso_25 = math.ceil((chapas * 40) / 100)
 
-                prego = round(area * 0.025, 2)
+                prego = math.ceil((tabica * 5) / 100)
 
-                regulador = round(area * 1.25, 2)
+                regulador = math.ceil(perfil_f530 * 2.5)
 
-                tirante = round(area * 0.417, 2)
+                tirante_metros = regulador * 1
 
-                uniao = round(area * 1.00, 2)
+                tirante = math.ceil(tirante_metros / 3)
 
-                massa_kg = round(area * 1.2, 2)
+                massa_kg = math.ceil(area * 1.2)
+
+                if massa_kg <= 6:
+                    massa_nome = "Massa Pronta 6kg"
+                    massa_qtd = 1
+                elif massa_kg <= 14:
+                    massa_nome = "Massa Pronta 14kg"
+                    massa_qtd = 1
+                else:
+                    massa_nome = "Massa Pronta 25kg"
+                    massa_qtd = math.ceil(massa_kg / 25)
 
                 # ----------------------------------
                 # LISTA FINAL
@@ -410,23 +437,23 @@ def calcular_orcamento(request):
                     },
 
                     {
-                        "nome": "Fita Telada",
+                        "nome": "Fita Telada 90m",
                         "quantidade": f"{fita} rolo"
                     },
 
                     {
-                        "nome": "Parafuso PA 13mm",
-                        "quantidade": f"{parafuso_13} caixa"
+                         "nome": "Parafuso PA 13mm",
+                        "quantidade": f"{parafuso_13} cento(s)"
                     },
 
                     {
                         "nome": "Parafuso GN 25mm",
-                        "quantidade": f"{parafuso_25} caixa"
+                        "quantidade": f"{parafuso_25} cento(s)"
                     },
-
+                    
                     {
                         "nome": "Prego de Aço 15x15",
-                        "quantidade": f"{prego} caixa"
+                        "quantidade": f"{prego} cento(s)"
                     },
 
                     {
@@ -440,13 +467,8 @@ def calcular_orcamento(request):
                     },
 
                     {
-                        "nome": "União F530",
-                        "quantidade": f"{uniao} unidades"
-                    },
-
-                    {
-                  "nome": massa_nome,
-                "quantidade": f"{massa_qtd} balde(s)"
+                        "nome": massa_nome,
+                        "quantidade": f"{massa_qtd} balde(s)"
                     },
 
                 ]
@@ -468,8 +490,8 @@ def calcular_orcamento(request):
                 f"https://wa.me/553432557975?text={mensagem}"
             )
 
-        except:
-
+        except Exception as e:
+            print(e)
             materiais = []
 
     request.session['materiais'] = materiais
