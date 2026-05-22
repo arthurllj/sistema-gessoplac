@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    
+    <meta charset="UTF-8">
+
+    <meta name="description"
+        content="Especialistas em drywall, construção a seco, isolamento acústico e materiais profissionais em Uberlândia.">
+
+    <meta name="keywords"
+        content="drywall uberlandia, construção a seco, forro drywall, placas drywall, gesso uberlandia, 
+        gessoplac, gesso acartonado, portas prontas, isolamento acustico, uberlandia gesso, gesso tibery,">
+
+    <title>
+        GessoPlac | Drywall e Construção a Seco em Uberlândia
+    </title>
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+          rel="stylesheet">
+
+    {% load static %}
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
+
+          <link rel="icon"
+      type="image/x-icon"
+      href="{% static 'img/favicon.ico' %}">
+
+</head>
+
+<body>
+
+    <!-- ====================================== -->
+    <!-- NAVBAR PREMIUM -->
+    <!-- ====================================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+
+        <div class="container">
+
+            <!-- LOGO -->
+
+            <a class="navbar-brand"
+               href="/">
+
+                <img src="{% static 'img/logo.png' %}"
+                     alt="GessoPlac"
+                     class="logo-navbar">
+
+            </a>
+
+
+            <!-- BOTÃO MOBILE -->
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuNavbar">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <!-- MENU -->
+
+            <div class="collapse navbar-collapse"
+                 id="menuNavbar">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="/">
+
+                            Início
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="{% url 'localizacao' %}">
+
+                            Localização
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="/produtos/">
+
+                            Produtos
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="/orcamento/">
+
+                            Orçamento
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="{% url 'sobre' %}">
+
+                            Sobre Nós
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="{% url 'contato' %}">
+
+                            Contato
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+
+                <!-- CONTATO NAVBAR -->
+
+<div class="navbar-contato">
+
+    <a href="tel:+553432557975"
+       class="telefone-navbar">
+
+        <i class="bi bi-telephone-fill"></i>
+
+        (34) 3255-7975
+
+    </a>
+
+            <a href="https://wa.me/553432557975?text=Olá!%20Acabei%20de%20conhecer%20o%20site%20da%20GessoPlac%20e%20gostaria%20de%20receber%20um%20orçamento%20para%20meu%20projeto."
+                 target="_blank"
+                  class="btn-navbar-whatsapp">
+
+                  <i class="bi bi-whatsapp"></i>
+
+        WhatsApp
+
+            </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ESPAÇAMENTO NAVBAR -->
+
+    <div class="navbar-space"></div>
+
+
+    <!-- CONTEÚDO -->
+
+    {% block content %}
+    {% endblock %}
+
+
+    <!-- WHATSAPP FLOAT -->
+
+    <a href="{{ whatsapp_site }}"
+   target="_blank"
+   rel="noopener"
+   class="whatsapp-float">
+
+    <i class="bi bi-whatsapp"></i>
+
+</a>
+
+    
+
+        <!-- ====================================== -->
+<!-- FOOTER PREMIUM -->
+<!-- ====================================== -->
+
+<footer class="footer-premium">
+
+    <div class="container">
+
+        <div class="row gy-5">
+
+            <!-- LOGO -->
+
+            <div class="col-lg-4">
+
+                <img src="{% static 'img/logo.png' %}"
+                     class="footer-logo"
+                     alt="Logo">
+
+                <p class="footer-texto">
+
+                    Especialistas em drywall, construção a seco,
+                    isolamento acústico e acabamentos profissionais.
+
+                </p>
+
+                <!-- REDES -->
+
+                <div class="footer-redes">
+
+                    <a href="https://www.facebook.com/gessoplacudi/?locale=pt_BR" target="_blank">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/gessoplac_/" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- LINKS -->
+
+            <div class="col-lg-4">
+
+                <h4 class="footer-titulo">
+                    Institucional
+                </h4>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="/">Início</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'sobre' %}">
+                            Sobre Nós
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'produtos' %}">
+                            Produtos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'orcamento' %}">
+                            Orçamento
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contato' %}">
+                            Contato
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONTATO -->
+
+            <div class="col-lg-4">
+
+                <h4 class="footer-titulo">
+                    Contato
+                </h4>
+
+                <div class="footer-contato">
+
+                    <p>
+                         <i class="bi bi-geo-alt-fill"></i> Av. Espanha - 885<br>
+                         Tibery - Uberlândia-MG
+                        </p>
+                    <p>
+                        <i class="bi bi-telephone-fill"></i>
+
+                        (34) 3255-7975
+                    </p>
+
+                    <p>
+                        <i class="bi bi-whatsapp"></i>
+
+                        (34) 3255-7975
+                    </p>
+                    
+                    <p>
+                        <i class="bi bi-clock"></i>
+
+                        07:15 às 17:00 (Segunda a Sexta)
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- COPYRIGHT -->
+
+        <div class="footer-copy">
+
+            © 2026 GessoPlac — Todos os direitos reservados.
+
+        </div>
+
+    </div>
+
+</footer>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- ANIMAÇÕES -->
+
+    <script>
+
+        const elements = document.querySelectorAll('.fade-up');
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if(entry.isIntersecting){
+
+                    entry.target.classList.add('show');
+
+                }
+
+            });
+
+        }, {
+
+            threshold: 0.2
+
+        });
+
+        elements.forEach(el => observer.observe(el));
+
+    </script>
+
+
+    <!-- COUNTERS -->
+
+    <script>
+
+        const counters = document.querySelectorAll('.counter');
+
+        counters.forEach(counter => {
+
+            const update = () => {
+
+                const target = +counter.getAttribute('data-target');
+
+                const current = +counter.innerText;
+
+                const increment = target / 100;
+
+                if(current < target){
+
+                    counter.innerText = Math.ceil(current + increment);
+
+                    setTimeout(update, 20);
+
+                }else{
+
+                    counter.innerText = target;
+
+                }
+
+            };
+
+            update();
+
+        });
+
+    </script>
+
+
+    <!-- LOADING -->
+
+    <script>
+
+        window.addEventListener("load", () => {
+
+            document.body.classList.add("loaded");
+
+        });
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+</body>
+
+</html>

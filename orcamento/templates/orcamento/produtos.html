@@ -1,0 +1,293 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- TOPO -->
+
+<section class="page-topo">
+
+    <div class="container">
+
+        <p class="produtos-caminho">
+            Início / <span>Todos os produtos</span>
+        </p>
+
+        <h1 class="produtos-topo-titulo">
+            NOSSOS PRODUTOS
+        </h1>
+
+        <p class="produtos-topo-subtitulo">
+            Soluções profissionais para drywall, construção a seco,
+            isolamento acústico e acabamento.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUTOS -->
+
+<section class="page-section">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            {% for produto in produtos %}
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card produto-card h-100 shadow-sm">
+
+                    <!-- IMAGEM -->
+
+                    <div class="produto-img-container">
+
+                        <img src="{% static produto.imagem %}"
+                             class="produto-img"
+                             alt="{{ produto.alt }}">
+
+                        <div class="produto-overlay">
+
+                            <button class="btn btn-light btn-sm"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modal{{ forloop.counter }}">
+
+                                Ver Produto
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- TEXTO -->
+
+                    <div class="card-body text-center">
+
+                        <h5 class="card-title">
+                            {{ produto.nome }}
+                        </h5>
+
+                        <p class="card-text">
+                            {{ produto.descricao }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- MODAIS DOS PRODUTOS -->
+<!-- ========================= -->
+
+{% for produto in produtos %}
+
+<div class="modal fade"
+     id="modal{{ forloop.counter }}"
+     tabindex="-1"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content produto-modal-content">
+
+            <!-- HEADER -->
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    {{ produto.nome }}
+                </h5>
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <!-- BODY -->
+
+            <div class="modal-body">
+
+                <div class="row g-4 align-items-center">
+
+                    <!-- IMAGEM -->
+
+                    <div class="col-md-6 text-center">
+
+                        <div class="produto-modal-img">
+
+                            <img src="{% static produto.imagem %}"
+                                 class="img-fluid"
+                                 alt="{{ produto.alt }}">
+
+                        </div>
+
+                    </div>
+
+                    <!-- INFO -->
+
+                    <div class="col-md-6">
+
+                        <h3 class="produto-modal-titulo">
+
+                            {{ produto.nome }}
+
+                        </h3>
+
+                        <p class="produto-modal-descricao">
+
+                            {{ produto.descricao }}
+
+                        </p>
+
+
+                        <!-- MARCAS -->
+
+                        {% if produto.marcas %}
+
+                        <div class="produto-info">
+
+                            <span class="produto-icon">🏷</span>
+
+                            <div>
+
+                                <strong>Marcas</strong>
+
+                                <p>{{ produto.marcas }}</p>
+
+                            </div>
+
+                        </div>
+
+                        {% endif %}
+
+
+                        <!-- TAMANHOS -->
+
+                        {% if produto.tamanhos %}
+
+                        <div class="produto-info">
+
+                            <span class="produto-icon">📏</span>
+
+                            <div>
+
+                                <strong>Tamanhos</strong>
+
+                                <p>{{ produto.tamanhos }}</p>
+
+                            </div>
+
+                        </div>
+
+                        {% endif %}
+
+
+                        <!-- ESPESSURAS -->
+
+                        {% if produto.espessuras %}
+
+                        <div class="produto-info">
+
+                            <span class="produto-icon">📐</span>
+
+                            <div>
+
+                                <strong>Espessuras</strong>
+
+                                <p>{{ produto.espessuras }}</p>
+
+                            </div>
+
+                        </div>
+
+                        {% endif %}
+
+
+                        <!-- CHAPAS -->
+
+                        {% if produto.chapas %}
+
+                        <div class="produto-info">
+
+                            <span class="produto-icon">🧱</span>
+
+                            <div>
+
+                                <strong>Chapas</strong>
+
+                                <p>{{ produto.chapas }}</p>
+
+                            </div>
+
+                        </div>
+
+                        {% endif %}
+
+
+                        <!-- TIPOS -->
+
+                        {% if produto.tipos %}
+
+                        <div class="produto-info">
+
+                            <span class="produto-icon">🔧</span>
+
+                            <div>
+
+                                <strong>Tipos</strong>
+
+                                <p>{{ produto.tipos }}</p>
+
+                            </div>
+
+                        </div>
+
+                        {% endif %}
+
+
+                        <!-- BOTÕES -->
+
+                        <div class="produto-modal-botoes">
+
+                            <a href="https://wa.me/553432557975?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para:%20{{ produto.nome }}"
+                               target="_blank"
+                               class="btn btn-success btn-sm">
+
+                                Solicitar Orçamento
+
+                            </a>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

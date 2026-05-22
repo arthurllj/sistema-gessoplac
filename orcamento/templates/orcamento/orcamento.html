@@ -1,0 +1,422 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ===================================== -->
+<!-- HERO PADRÃO -->
+<!-- ===================================== -->
+
+<section class="page-topo">
+
+    <div class="container">
+
+        <p class="page-path">
+            Início / <span>Orçamento</span>
+        </p>
+
+        <h1 class="page-title">
+            FAÇA SEU ORÇAMENTO
+        </h1>
+
+        <p class="page-subtitle">
+            Gere automaticamente a composição de materiais
+            para sistemas drywall e forros.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================== -->
+<!-- ORÇAMENTO -->
+<!-- ===================================== -->
+
+<section class="page-section">
+
+    <div class="container">
+
+        {% if materiais %}
+
+        <!-- RESULTADO -->
+
+     <div id="pdf-area">
+
+         <div class="orcamento-resultado">
+
+         <div id="pdf-orcamento">
+
+            <div class="resultado-topo">
+
+                <div>
+
+                    <img
+                        src="{% static 'img/logo.png' %}"
+                        alt="GessoPlac"
+                        class="logo-orcamento"
+                    >
+
+                    <h2 class="fw-bold mb-1">
+                        Orçamento Gerado
+                    </h2>
+
+                    <p class="text-muted mb-0">
+                        Lista automática de materiais para seu projeto.
+                    </p>
+
+                </div>
+
+                <div class="resultado-badge">
+
+                    GessoPlac
+
+                </div>
+
+            </div>
+
+
+            <!-- TABELA -->
+
+            <div class="table-responsive mt-4">
+
+                <table class="table align-middle">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Material</th>
+                            <th>Quantidade</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for item in materiais %}
+
+                        <tr>
+
+                            <td>{{ item.nome }}</td>
+
+                            <td>{{ item.quantidade }}</td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- BOTÕES -->
+            </div>
+            
+            <div class="resultado-acoes">
+
+                <a
+                    href="{{ link_whatsapp }}"
+                    target="_blank"
+                    class="btn btn-success btn-lg"
+                >
+
+                    WhatsApp
+
+                </a>
+
+                   <a href="{% url 'gerar_pdf' %}"
+                       class="btn btn-dark btn-lg">
+
+                           Salvar PDF
+
+                  </a>
+
+                <a
+                    href="{% url 'orcamento' %}"
+                    class="btn btn-orcamento-outline btn-lg"
+                >
+
+                    Novo Orçamento
+
+                </a>
+
+            </div>
+
+
+            <!-- RODAPÉ -->
+
+            <div class="logo-final text-center">
+
+                <img
+                    src="{% static 'img/logo.png' %}"
+                    alt="GessoPlac"
+                    class="logo-footer"
+                >
+
+            <p class="orcamento-footer-text mt-3 mb-0">
+                GessoPlac • Sistemas Drywall e Construção a Seco
+            </p>
+
+            </div>
+
+        </div>
+    </div>
+        {% else %}
+
+        <!-- FORMULÁRIO -->
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-6">
+
+                <div class="orcamento-card">
+
+                    <!-- LOGO -->
+
+                    <img
+                        src="{% static 'img/logo.png' %}"
+                        alt="GessoPlac"
+                        class="logo-card"
+                    >
+
+
+                    <!-- TÍTULO -->
+
+                    <div class="mb-5">
+
+                 <span class="contato-tag">
+                      Orçamento Inteligente
+                  </span>
+
+                  <h2 class="orcamento-titulo">
+                     Gere seu orçamento automaticamente
+                  </h2>
+
+                 <p class="orcamento-subtitulo">
+                       Informe as medidas do seu projeto e receba
+                       instantaneamente a composição completa de materiais.
+                  </p>
+
+                    </div>
+
+
+                    <!-- FORM -->
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+
+
+                        <!-- SISTEMA -->
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Sistema
+                            </label>
+
+                            <select
+                                class="form-select"
+                                name="sistema"
+                                required
+                            >
+
+                                <option value="">
+                                    --- Selecione ---
+                                </option>
+
+                                <option value="parede">
+                                    Parede Drywall
+                                </option>
+
+                                <option value="forro">
+                                    Forro Drywall
+                                </option>
+                                
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- PLACA -->
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Tipo de Placa
+                            </label>
+
+                            <select
+                                class="form-select"
+                                name="placa"
+                                required
+                            >
+
+                                <option value="">
+                                    --- Selecione ---
+                                </option>
+
+                                <option value="240">
+                                    Placa ST 120x240
+                                </option>
+
+                                <option value="180_st">
+                                    Placa ST 120x180
+                                </option>
+
+                                <option value="180_ru">
+                                    Placa RU 120x180
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ALTURA -->
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Altura (m)
+                            </label>
+
+                            <input
+                                type="number"
+                                step="0.01"
+                                inputmode="decimal"
+                                class="form-control"
+                                name="altura"
+                                placeholder="Ex: 2.80"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- COMPRIMENTO -->
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Comprimento (m)
+                            </label>
+
+                            <input
+                                type="number"
+                                step="0.01"
+                                inputmode="decimal"
+                                class="form-control"
+                                name="largura"
+                                placeholder="Ex: 4.50"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- BOTÃO -->
+
+                        <button
+                            id="btn-orcamento"
+                            class="btn btn-primary btn-lg w-100" >
+                             Gerar Orçamento
+                        </button>
+
+                        <div class="orcamento-badges">
+
+                     <div class="badge-orcamento">
+                          ⚡ Orçamento instantâneo
+                     </div>
+
+                     <div class="badge-orcamento">
+                       📄 Lista automática
+                     </div>
+
+                      <div class="badge-orcamento">
+                         📲 Envio por WhatsApp
+                     </div>
+
+                    </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+<script>
+
+function gerarPDF(){
+
+    const element = document.getElementById('pdf-orcamento');
+
+    const opt = {
+
+        margin: 10,
+
+        filename: 'orcamento-gessoplac.pdf',
+
+        image: {
+            type: 'jpeg',
+            quality: 1
+        },
+
+        html2canvas: {
+
+            scale: 2,
+
+            useCORS: true,
+
+            backgroundColor: "#1f2937"
+        },
+
+        jsPDF: {
+
+            unit: 'mm',
+
+            format: 'a4',
+
+            orientation: 'portrait'
+        }
+    };
+
+    html2pdf()
+        .set(opt)
+        .from(element)
+        .save();
+}
+
+</script>
+
+<script>
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", () => {
+
+    const btn =
+        document.getElementById("btn-orcamento");
+
+    btn.innerHTML =
+        "Gerando orçamento...";
+
+    btn.disabled = true;
+});
+
+</script>
+{% endblock %}

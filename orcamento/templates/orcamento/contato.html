@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO CONTATO -->
+
+<section class="page-topo">
+
+    <div class="container">
+
+        <p class="produtos-caminho">
+            Início / <span>Contato</span>
+        </p>
+
+        <h1 class="produtos-topo-titulo">
+            ENTRE EM CONTATO
+        </h1>
+
+        <p class="produtos-topo-subtitulo">
+            Fale com a equipe GessoPlac através dos nossos canais oficiais.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTATO -->
+
+<section class="contato-section">
+
+    <div class="container">
+
+        <div class="contato-card">
+
+            <div class="row g-5 align-items-center">
+
+                <!-- INFORMAÇÕES -->
+
+                <div class="col-lg-6">
+
+                    <span class="contato-tag">
+                        Atendimento
+                    </span>
+
+                    <h2 class="contato-titulo">
+                        Estamos prontos para atender você
+                    </h2>
+
+                    <p class="contato-descricao">
+                        Entre em contato para solicitar informações,
+                        tirar dúvidas ou realizar seu orçamento.
+                    </p>
+
+
+                    <!-- TELEFONE -->
+
+                    <a href="tel:+553432557975"
+                       class="contato-item">
+
+                        <div class="contato-icon">
+
+                            <i class="bi bi-telephone-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>Telefone</span>
+
+                            <strong>(34) 3255-7975</strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- WHATSAPP -->
+
+                    <a href="{{ whatsapp_site }}" 
+                        target="_blank"
+                        class="contato-item">
+
+                     <div class="contato-icon whatsapp">
+
+                         <i class="bi bi-whatsapp"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>WhatsApp</span>
+
+                            <strong>(34) 3255-7975</strong>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+                <!-- REDES -->
+
+                <div class="col-lg-6">
+
+                    <div class="redes-box">
+
+                        <h3>
+                            Siga-nos
+                        </h3>
+
+                        <p>
+                            Acompanhe novidades, produtos e conteúdos
+                            da GessoPlac nas redes sociais.
+                        </p>
+
+                        <div class="redes-links">
+
+                            <a href="https://www.facebook.com/gessoplacudi/?locale=pt_BR"
+                               class="rede-btn facebook">
+
+                                <i class="bi bi-facebook"></i>
+
+                                Facebook
+
+                            </a>
+
+                            <a href="https://www.instagram.com/gessoplac_/"
+                               class="rede-btn instagram">
+
+                                <i class="bi bi-instagram"></i>
+
+                                Instagram
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

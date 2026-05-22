@@ -1,0 +1,289 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- ====================================== -->
+<!-- TOPO -->
+<!-- ====================================== -->
+
+<section class="page-topo">
+
+    <div class="container">
+
+        <p class="produtos-caminho">
+            Início / <span>Localização</span>
+        </p>
+
+        <h1 class="produtos-topo-titulo">
+            NOSSA LOCALIZAÇÃO
+        </h1>
+
+        <p class="produtos-topo-subtitulo">
+            Visite nossa loja física e encontre soluções profissionais
+            para drywall, construção a seco e acabamento.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ====================================== -->
+<!-- LOCALIZAÇÃO PREMIUM -->
+<!-- ====================================== -->
+
+<section class="localizacao-premium">
+
+    <div class="container">
+
+        <div class="row g-4 localizacao-grid">
+
+            <!-- ====================================== -->
+            <!-- CARD INFORMAÇÕES -->
+            <!-- ====================================== -->
+
+            <div class="col-lg-4">
+
+                <div class="local-card fade-up">
+
+                    <div class="local-img-box">
+
+                        <img src="{% static 'img/background1.jpg' %}"
+                             alt="GessoPlac">
+
+                    </div>
+
+                    <div class="local-content">
+
+                        <span class="local-tag">
+                            Loja Física
+                        </span>
+
+                        <h2>
+                            GessoPlac
+                        </h2>
+
+                        <p class="local-desc">
+                            Especialistas em drywall, construção
+                            a seco, isolamento acústico e acabamento
+                            profissional em Uberlândia.
+                        </p>
+
+
+                        <!-- ENDEREÇO -->
+
+                        <div class="local-info">
+
+                            <i class="bi bi-geo-alt-fill"></i>
+
+                            <div>
+
+                                <strong>Endereço</strong>
+
+                                <p>
+                                    Av. Espanha, 885<br>
+                                    Bairro Tibery – Uberlândia/MG
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- HORÁRIO -->
+
+                        <div class="local-info">
+
+                            <i class="bi bi-clock-fill"></i>
+
+                            <div>
+
+                                <strong>Horário</strong>
+
+                                <p>
+                                    Segunda a Sexta<br>
+                                    07:15 às 17:00
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!-- BOTÕES -->
+
+                        <div class="local-botoes">
+
+                            <a href="tel:+553432557975"
+                               class="btn-local ligar">
+
+                                <i class="bi bi-telephone-fill"></i>
+
+                                Ligar
+
+                            </a>
+
+
+                            <a href="{{ whatsapp_site }}"
+                               target="_blank"
+                               class="btn-local whatsapp">
+
+                                <i class="bi bi-whatsapp"></i>
+
+                                WhatsApp
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ====================================== -->
+            <!-- MAPA -->
+            <!-- ====================================== -->
+
+            <div class="col-lg-8">
+
+                <div class="map-card fade-up delay-1">
+
+                    <div class="map-header">
+
+                        <div>
+
+                            <span class="map-tag">
+                                Navegação
+                            </span>
+
+                            <h3>
+                                Como chegar até a GessoPlac?
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MAPA -->
+
+                    <div class="map-box">
+
+                        <iframe
+                            src="https://www.google.com/maps?q=Av%20Espanha%20885%20Uberlandia&output=embed"
+                            width="100%"
+                            height="500"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+
+                    </div>
+
+
+                    <!-- BOTÕES -->
+
+                    <div class="map-actions">
+
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=Av+Espanha+885+Uberlandia"
+                           target="_blank"
+                           class="btn-map google">
+
+
+                            Google Maps
+
+                        </a>
+
+
+                        <a href="https://waze.com/ul?q=Av%20Espanha%20885%20Uberlandia"
+                           target="_blank"
+                           class="btn-map waze">
+
+
+                            Waze
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ====================================== -->
+        <!-- STREET VIEW -->
+        <!-- ====================================== -->
+
+        <div class="street-card fade-up delay-2">
+
+            <div class="street-header">
+
+                <span class="street-mini">
+                    Fachada da Loja
+                </span>
+
+                <h3>
+                    Conheça nossa estrutura
+                </h3>
+
+                <p>
+                    Veja exatamente como chegar até a GessoPlac.
+                </p>
+
+            </div>
+
+
+            <div class="street-frame">
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!4v1773321577091!6m8!1m7!1ssDvidIR2mMGou-NtkvsC9g!2m2!1d-18.90039025051623!2d-48.24691645071849!3f52.54298689830052!4f2.145922002488817!5f0.7820865974627469"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function rotaUsuario() {
+
+    if (navigator.geolocation) {
+
+        navigator.geolocation.getCurrentPosition(function(position){
+
+            let lat = position.coords.latitude
+            let lng = position.coords.longitude
+
+            window.open(
+                `https://www.google.com/maps/dir/${lat},${lng}/Av+Espanha+885+Uberlandia`
+            )
+
+        })
+
+    } else {
+
+        alert("Seu navegador não suporta localização.")
+
+    }
+
+}
+
+</script>
+
+{% endblock %}

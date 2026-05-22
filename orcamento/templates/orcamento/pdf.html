@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<style>
+
+@page{
+    size: A4;
+    margin: 18mm;
+}
+
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #111;
+
+    font-size: 12px;
+}
+
+
+/* ===================================== */
+/* TOPO */
+/* ===================================== */
+
+.topo{
+
+    width: 100%;
+
+    border-bottom: 2px solid #0f172a;
+
+    padding-bottom: 15px;
+
+    margin-bottom: 25px;
+}
+
+.topo table{
+
+    width: 100%;
+}
+
+.logo{
+
+    width: 140px;
+}
+
+.topo-direita{
+
+    text-align: right;
+}
+
+.topo-direita h1{
+
+    margin: 0;
+
+    font-size: 26px;
+
+    color: #0f172a;
+}
+
+.topo-direita p{
+
+    margin: 4px 0;
+
+    color: #555;
+}
+
+
+/* ===================================== */
+/* CLIENTE */
+/* ===================================== */
+
+.info-box{
+
+    border: 1px solid #dcdcdc;
+
+    padding: 18px;
+
+    border-radius: 8px;
+
+    margin-bottom: 25px;
+}
+
+.info-grid{
+
+    width: 100%;
+}
+
+.info-grid td{
+
+    padding: 6px 0;
+}
+
+.label{
+
+    font-weight: bold;
+
+    color: #0f172a;
+}
+
+
+/* ===================================== */
+/* TABELA */
+/* ===================================== */
+
+.tabela{
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 10px;
+}
+
+.tabela thead{
+
+    background: #0f172a;
+
+    color: white;
+}
+
+.tabela th{
+
+    padding: 14px;
+
+    text-align: left;
+
+    font-size: 13px;
+}
+
+.tabela td{
+
+    padding: 14px;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.tabela tbody tr:nth-child(even){
+
+    background: #f8fafc;
+}
+
+
+/* ===================================== */
+/* RESUMO */
+/* ===================================== */
+
+.resumo{
+
+    margin-top: 30px;
+
+    width: 100%;
+}
+
+.resumo td{
+
+    padding: 10px 0;
+}
+
+.total-box{
+
+    text-align: right;
+
+    margin-top: 25px;
+}
+
+.total{
+
+    display: inline-block;
+
+    background: #0f172a;
+
+    color: white;
+
+    padding: 16px 26px;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* ===================================== */
+/* RODAPÉ */
+/* ===================================== */
+
+.rodape{
+
+    margin-top: 50px;
+
+    border-top: 1px solid #dcdcdc;
+
+    padding-top: 18px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 11px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ===================================== -->
+<!-- TOPO -->
+<!-- ===================================== -->
+
+<div class="topo">
+
+    <table>
+
+        <tr>
+
+            <td>
+
+        {% load static %}
+
+            <img
+                  src="http://127.0.0.1:8000/static/img/logo.png"
+                class="logo"
+                alt="GessoPlac">
+
+            </td>
+
+            <td class="topo-direita">
+
+                <h1>ORÇAMENTO</h1>
+
+                <p>
+                    GessoPlac • Sistemas Drywall
+                </p>
+
+                <p>
+                    Data: {% now "d/m/Y" %}
+                </p>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- ===================================== -->
+<!-- INFORMAÇÕES -->
+<!-- ===================================== -->
+
+<div class="info-box">
+
+    <table class="info-grid">
+
+        <tr>
+
+            <td>
+                <span class="label">
+                    Cliente:
+                </span>
+
+                Consumidor
+            </td>
+
+            <td>
+                <span class="label">
+                    Sistema:
+                </span>
+
+                Drywall
+            </td>
+
+        </tr>
+
+        <tr>
+
+            <td>
+                <span class="label">
+                    Empresa:
+                </span>
+
+                GessoPlac
+            </td>
+
+            <td>
+                <span class="label">
+                    Cidade:
+                </span>
+
+                Uberlândia/MG
+            </td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- ===================================== -->
+<!-- TABELA -->
+<!-- ===================================== -->
+
+<table class="tabela">
+
+    <thead>
+
+        <tr>
+
+            <th>
+                Material
+            </th>
+
+            <th width="220">
+                Quantidade
+            </th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for item in materiais %}
+
+        <tr>
+
+            <td>
+                {{ item.nome }}
+            </td>
+
+            <td>
+                {{ item.quantidade }}
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+
+<!-- ===================================== -->
+<!-- TOTAL -->
+<!-- ===================================== -->
+
+<div class="total-box">
+
+    <div class="total">
+
+        Total de Itens:
+        {{ materiais|length }}
+
+    </div>
+
+</div>
+
+
+<!-- ===================================== -->
+<!-- RODAPÉ -->
+<!-- ===================================== -->
+
+<div class="rodape">
+
+    <p>
+
+        GessoPlac • Sistemas Drywall e Construção a Seco
+
+    </p>
+
+    <p>
+
+        WhatsApp: (34) 3255-7975
+
+    </p>
+
+</div>
+
+</body>
+</html>

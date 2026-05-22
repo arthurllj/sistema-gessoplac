@@ -1,0 +1,573 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- ===================================== -->
+<!-- HERO -->
+<!-- ===================================== -->
+
+<section class="hero-landing">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container position-relative">
+
+        <div class="row align-items-center gy-5">
+
+            <!-- TEXTO -->
+
+            <div class="col-lg-6">
+
+                <span class="hero-badge">
+                    Drywall • Construção a Seco • Uberlândia
+                </span>
+
+                <h1 class="hero-title fade-up">
+
+                    Tudo para drywall
+                    e construção a seco
+                    em um só lugar
+
+                </h1>
+
+                <p class="hero-subtitle fade-up delay-1">
+
+                        Atendimento especializado, materiais normatizados,
+                        agilidade na entrega e soluções completas para sua obra.
+                        
+
+
+                </p>
+
+               <div class="hero-buttons fade-up delay-2">
+
+                <a href="{% url 'produtos' %}"
+                class="btn btn-success btn-lg">
+             
+                 <i class="bi bi-grid"></i>
+                 Ver Produtos
+             
+             </a>
+
+             <a href="{{ whatsapp_site }}"
+             rel="noopener"
+            class="btn btn-outline-light btn-lg">
+
+                <i class="bi bi-whatsapp"></i>
+                    Solicitar Orçamento
+
+                </a>
+
+                    <a href="{% url 'localizacao' %}"
+                    class="btn btn-outline-light btn-lg">
+                 
+                     <i class="bi bi-geo-alt"></i>
+                     Localização
+                 
+                 </a>
+
+            </div>
+
+            </div>
+
+
+            <!-- IMAGEM -->
+
+            <div class="col-lg-6 text-center fade-up delay-2">
+
+                <img src="{% static 'img/loja2.webp' %}"
+                     class="hero-img"
+                     alt="Instalação Drywall">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================================== -->
+<!-- MARCAS -->
+<!-- ===================================== -->
+
+<section class="social-proof dark-section">
+
+    <div class="container">
+
+        <div class="marcas-card">
+
+            <p class="titulo-marcas">
+
+                Empresas e profissionais que confiam na GessoPlac
+
+            </p>
+
+            <div class="marcas-logos">
+
+                <div class="logo-box">
+                    <img src="{% static 'img/marcas/knauf_sem_fundo.png' %}" alt="Knauf">
+                </div>
+
+                <div class="logo-box">
+                    <img src="{% static 'img/marcas/placo.png' %}" alt="Placo">
+                </div>
+
+                <div class="logo-box">
+                    <img src="{% static 'img/marcas/walsywa_sem_fundo.png' %}" alt="Walsywa">
+                </div>
+
+                <div class="logo-box">
+                    <img src="{% static 'img/marcas/ancora_sem_fundo.png' %}" alt="Âncora">
+                </div>
+
+                <div class="logo-box">
+                    <img src="{% static 'img/marcas/trevo_sem_fundo.png' %}" alt="Trevo">
+                </div>
+
+                <div class="logo-box">
+                    <img src="{% static 'img/marcas/plaster_sem_fundo.png' %}" alt="Plaster">
+                </div>
+
+            </div>
+
+            <p class="outras-marcas">
+
+                e muitas outras...
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DIFERENCIAL -->
+<section class="diferenciais-section dark-section">
+
+    <div class="container">
+
+        <div class="diferenciais-box">
+
+            <div class="row align-items-center g-5">
+
+                <!-- IMAGEM -->
+
+                <div class="col-lg-5 text-center">
+
+                    <img src="{% static 'img/fachada-loja.webp' %}"
+                         class="img-fluid diferencial-img"
+                         alt="Profissional GessoPlac">
+
+                </div>
+
+
+                <!-- TEXTO -->
+
+                <div class="col-lg-7">
+
+                    <span class="diferencial-badge">
+
+                        NOSSO DIFERENCIAL
+
+                    </span>
+
+                   <h2 class="diferencial-titulo">
+
+                        Soluções profissionais para
+                            drywall e construção a seco
+
+                    </h2>
+
+                    <p class="diferencial-texto">
+
+                          A GessoPlac oferece materiais normatizados,
+                         atendimento especializado e agilidade para
+                         obras residenciais e comerciais em Uberlândia.
+
+                    </p>
+
+
+                    <!-- ITENS -->
+
+                    <div class="diferencial-item">
+
+                        <div class="check-icon">
+                            ✓
+                        </div>
+
+                        <p>
+                            <strong>Variedade de Produtos:</strong>
+                            Trabalhamos com as principais marcas do mercado.
+                        </p>
+
+                    </div>
+
+
+                    <div class="diferencial-item">
+
+                        <div class="check-icon">
+                            ✓
+                        </div>
+
+                        <p>
+                            <strong>Atendimento Especializado:</strong>
+                            Equipe preparada para ajudar no seu orçamento.
+                        </p>
+
+                    </div>
+
+
+                    <div class="diferencial-item">
+
+                        <div class="check-icon">
+                            ✓
+                        </div>
+
+                        <p>
+                            <strong>Entrega Rápida:</strong>
+                            Agilidade para sua obra não parar.
+                        </p>
+
+                    </div>
+
+
+                    <div class="diferencial-item">
+
+                        <div class="check-icon">
+                            ✓
+                        </div>
+
+                        <p>
+                            <strong>Preço Competitivo:</strong>
+                            Qualidade profissional com ótimo custo-benefício.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+            <!-- GOOGLE REVIEWS -->
+
+            <div class="reviews-embed">
+
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+
+                <div class="elfsight-app-45f74ca2-d6b4-4b3a-92a9-b3aad0c53213"
+                     data-elfsight-app-lazy>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BENEFÍCIOS -->
+
+<section class="vantagens-section dark-section">
+
+<div class="container text-center">
+
+    <h3 class="fw-bold mb-5 fade-up">
+        Vantagens do nosso sistema
+    </h3>
+
+    <div class="row g-4">
+
+        <div class="col-md-4 fade-up">
+            <div class="beneficio-card">
+                <i class="bi bi-lightning-charge"></i>
+                <h5>Rapidez</h5>
+                <p>Orçamento em segundos.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 fade-up delay-1">
+            <div class="beneficio-card">
+                <i class="bi bi-graph-up"></i>
+                <h5>Precisão</h5>
+                <p>Cálculo automático e confiável.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4 fade-up delay-2">
+            <div class="beneficio-card">
+                <i class="bi bi-whatsapp"></i>
+                <h5>Praticidade</h5>
+                <p>Envio direto para WhatsApp.</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ====================================== -->
+<!-- PRINCIPAIS CATEGORIAS -->
+<!-- ====================================== -->
+
+<section class="categorias-section dark-section">
+
+    <div class="container">
+
+        <!-- TÍTULO -->
+
+        <div class="section-header text-center">
+
+            <span class="section-badge">
+                LINHA PROFISSIONAL
+            </span>
+
+            <h2 class="section-title">
+
+                Principais Categorias
+
+            </h2>
+
+            <p class="section-subtitle">
+
+                Produtos profissionais para drywall,
+                construção a seco, isolamento e acabamento.
+
+            </p>
+
+        </div>
+
+
+        <!-- GRID -->
+
+        <div class="row g-4">
+
+            <!-- CARD -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="categoria-card">
+
+                    <div class="categoria-img">
+
+                        <img src="{% static 'img/categorias/chapa.jpg' %}"
+                             alt="Chapas Drywall">
+
+                    </div>
+
+                    <div class="categoria-content">
+
+                        <h4>
+                            Chapas Drywall
+                        </h4>
+
+                        <p>
+                            Chapas ST, RU e RF para
+                            paredes, forros e divisórias.
+                        </p>
+
+                        <a href="/produtos/"
+                           class="categoria-btn">
+
+                            Ver Produtos
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="categoria-card">
+
+                    <div class="categoria-img">
+
+                        <img src="{% static 'img/categorias/perfil.jpg' %}"
+                             alt="Perfis Metálicos">
+
+                    </div>
+
+                    <div class="categoria-content">
+
+                        <h4>
+                            Perfis Metálicos
+                        </h4>
+
+                        <p>
+                            Estruturas metálicas
+                            para montagem drywall.
+                        </p>
+
+                        <a href="/produtos/"
+                           class="categoria-btn">
+
+                            Ver Produtos
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="categoria-card">
+
+                    <div class="categoria-img">
+
+                        <img src="{% static 'img/categorias/parafuso.jpg' %}"
+                             alt="Parafusos">
+
+                    </div>
+
+                    <div class="categoria-content">
+
+                        <h4>
+                            Parafusos
+                        </h4>
+
+                        <p>
+                            Fixação profissional
+                            para sistemas drywall.
+                        </p>
+
+                        <a href="/produtos/"
+                           class="categoria-btn">
+
+                            Ver Produtos
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="categoria-card">
+
+                    <div class="categoria-img">
+
+                        <img src="{% static 'img/categorias/ferramenta.jpg' %}"
+                             alt="Ferramentas">
+
+                    </div>
+
+                    <div class="categoria-content">
+
+                        <h4>
+                            Ferramentas
+                        </h4>
+
+                        <p>
+                            Equipamentos e acessórios
+                            para instalação profissional.
+                        </p>
+
+                        <a href="/produtos/"
+                           class="categoria-btn">
+
+                            Ver Produtos
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ====================================== -->
+<!-- CTA FINAL PREMIUM -->
+<!-- ====================================== -->
+
+<section class="cta-final-section">
+
+    <div class="container">
+
+        <div class="cta-final-box">
+
+            <span class="cta-badge">
+
+                ORÇAMENTO RÁPIDO E PROFISSIONAL
+
+            </span>
+
+            <h2 class="cta-final-title">
+
+                Pronto para calcular seu material?
+
+            </h2>
+
+            <p class="cta-final-text">
+
+                Receba atendimento especializado para drywall, forros, 
+                divisórias e construção a seco com a equipe da GessoPlac.
+
+            </p>
+
+
+            <div class="cta-final-buttons">
+
+                <a href="{% url 'orcamento' %}"
+                   class="btn btn-cta-principal">
+
+                    Calcular seu Orçamento
+
+                </a>
+
+
+                <a href="https://wa.me/553432557975?text=Olá!%20Acabei%20de%20conhecer%20o%20site%20da%20GessoPlac%20e%20gostaria%20de%20receber%20um%20orçamento%20para%20meu%20projeto."
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline-light btn-lg">
+             
+                 Receber Atendimento Direto
+             
+             </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}
