@@ -701,6 +701,22 @@ transform:translateY(0);
 }
 
 /* container */
+
+.container{
+
+    width: 100%;
+}
+
+@media(max-width:768px){
+
+    .container{
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
 .marcas-container{
     display: flex;
     justify-content: center;
@@ -1900,21 +1916,66 @@ transform:translateY(0);
 
 /* RESPONSIVO */
 
+
 @media(max-width:768px){
 
     .hero-landing{
 
-        padding: 80px 0;
+        padding: 60px 0;
+        text-align: center;
     }
 
     .hero-title{
 
-        font-size: 40px;
+        font-size: 34px;
+        line-height: 1.2;
+
+        margin-bottom: 18px;
     }
 
     .hero-subtitle{
 
-        font-size: 16px;
+        font-size: 15px;
+        line-height: 1.7;
+
+        margin-bottom: 25px;
+    }
+
+    .hero-buttons{
+
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-buttons .btn{
+
+        width: 100%;
+        justify-content: center;
+
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+
+    .hero-img{
+
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    .hero-badge{
+
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+
+        .navbar-custom{
+
+        padding: 10px 0;
+    }
+
+    .logo-navbar{
+
+        height: 52px;
     }
 
 }
