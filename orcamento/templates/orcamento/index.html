@@ -52,7 +52,8 @@
 
              <a href="{{ whatsapp_site }}"
              rel="noopener"
-            class="btn btn-outline-light btn-lg">
+             onclick="gtag('event', 'hero_whatsapp')"
+             class="btn btn-outline-light btn-lg">
 
                 <i class="bi bi-whatsapp"></i>
                     Solicitar Orçamento
@@ -552,9 +553,9 @@
                 </a>
 
 
-                <a href="https://wa.me/553432557975?text=Olá!%20Acabei%20de%20conhecer%20o%20site%20da%20GessoPlac%20e%20gostaria%20de%20receber%20um%20orçamento%20para%20meu%20projeto."
-                target="_blank"
+                <a href= "{{ whatsapp_site }}"
                 rel="noopener"
+                onclick="gtag('event', 'clique_whatsapp_cta')"
                 class="btn btn-outline-light btn-lg">
              
                  Receber Atendimento Direto

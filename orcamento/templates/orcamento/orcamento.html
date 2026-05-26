@@ -147,6 +147,7 @@
                 <a
                     href="{{ link_whatsapp }}"
                     target="_blank"
+                    onclick="gtag('event', 'orcamento_whatsapp')"
                     class="btn btn-success btn-lg"
                 >
 
@@ -433,6 +434,8 @@ function gerarPDF(){
 const form = document.querySelector("form");
 
 form.addEventListener("submit", () => {
+
+    gtag('event', 'orcamento_gerado');
 
     const btn =
         document.getElementById("btn-orcamento");
