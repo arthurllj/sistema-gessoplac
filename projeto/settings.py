@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-xpuv4!9(y=o(w9pictnkwe52mpxh6+k6fgs0^cw_gu7y+c%t!5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.100', '192.168.15.7', 'localhost'] 
+ALLOWED_HOSTS = ['127.0.0.1', '.onrender.com', '192.168.15.7 ', 'localhost'] 
 
 
 # Application definition
@@ -110,8 +110,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'orcamento/static',
-    BASE_DIR / 'static',
-]
+    BASE_DIR / 'orcamento/static',]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
