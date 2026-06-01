@@ -306,12 +306,12 @@ def calcular_orcamento(request):
                     },
 
                     {
-                        "nome": f"Montante M{perfil}",
+                        "nome": f"Montante {perfil}",
                         "quantidade": f"{montantes} barras"
                     },
 
                     {
-                        "nome": f"Guia G{perfil}",
+                        "nome": f"Guia {perfil}",
                         "quantidade": f"{guias} barras"
                     },
 
@@ -393,7 +393,7 @@ def calcular_orcamento(request):
                 parafuso_13 = math.ceil(parafuso_13_real)
                 # ----------------------------------
                 # 40 parafusos GN25 por chapa
-                parafuso_25 = math.ceil((chapas * 40) / 100)
+                parafuso_25 = math.ceil((placas * 40) / 100)
 
                 prego = math.ceil((tabica * 5) / 100)
 
@@ -432,7 +432,7 @@ def calcular_orcamento(request):
                     },
 
                     {
-                        "nome": "Tabica",
+                        "nome": "Tabica Branca",
                         "quantidade": f"{tabica} barras"
                     },
 
@@ -462,7 +462,7 @@ def calcular_orcamento(request):
                     },
 
                     {
-                        "nome": "Tirante",
+                        "nome": "Tirante 3m",
                         "quantidade": f"{tirante} unidades"
                     },
 
@@ -491,7 +491,7 @@ def calcular_orcamento(request):
             )
 
         except Exception as e:
-            print(e)
+            print("Erro ao calcular orçamento:", e)
             materiais = []
 
     request.session['materiais'] = materiais
