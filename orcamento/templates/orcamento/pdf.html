@@ -191,25 +191,59 @@ body{
 
 .rodape{
 
-    margin-top: 50px;
+    margin-top: 5px;
 
     border-top: 1px solid #dcdcdc;
 
-    padding-top: 18px;
+    padding-top: 8px;
 
-    text-align: center;
+    font-size: 10px;
+}
 
-    color: #666;
+.watermark{
 
-    font-size: 11px;
+    position: fixed;
+
+    top: 55%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-20deg);
+
+    width: 85%;
+
+    opacity: 0.05;
+}
+
+.watermark img{
+
+    width: 100%;
+
+    height: auto;
+}
+.total-box,
+.rodape,
+.alerta-orcamento{
+
+    page-break-inside: avoid;
+
+    break-inside: avoid;
 }
 
 </style>
 
 </head>
-
 <body>
 
+<div class="watermark">
+
+    <img
+        src="{{ logo_url }}"
+        alt="Marca d'água">
+
+</div>
 
 <!-- ===================================== -->
 <!-- TOPO -->
@@ -226,7 +260,7 @@ body{
         {% load static %}
 
             <img
-                  src="http://127.0.0.1:8000/static/img/logo.png"
+                src="{{ logo_url }}"
                 class="logo"
                 alt="GessoPlac">
 
@@ -366,32 +400,10 @@ body{
 
 </div>
 
-
-<!-- ===================================== -->
-<!-- ALERTA -->
-<!-- ===================================== -->
-
-
-
 <!-- ===================================== -->
 <!-- RODAPÉ -->
 <!-- ===================================== -->
 
-<div class="rodape">
-
-    <p>
-
-        GessoPlac • Sistemas Drywall e Construção a Seco
-
-    </p>
-
-    <p>
-
-        WhatsApp: (34) 3255-7975
-
-    </p>
-
-</div>
 
 <div style="
     margin-top:17px;
@@ -401,12 +413,7 @@ body{
     background:#fff5f5;
     color:#c82333;
     font-size:12px;
-    line-height:1.6;
-
-    page-break-inside: avoid;
-
-    break-inside: avoid;
-">
+    line-height:1.6;">
 
     <strong>
         ORÇAMENTO ESTIMADO
@@ -427,5 +434,6 @@ body{
     </strong>
 
 </div>
+
 </body>
 </html>

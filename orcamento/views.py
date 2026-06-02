@@ -1,6 +1,9 @@
+from urllib import request
+
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from weasyprint import HTML
+from django.templatetags.static import static
 from django.http import HttpResponse
 
 import urllib.parse
@@ -510,25 +513,40 @@ def contato(request):
 
 def gerar_pdf(request):
 
-    materiais = request.session.get('materiais', [])
+    materiais = request.session.get(
+        'materiais',
+        []
+    )
+
+    logo_url = request.build_absolute_uri(
+        static('img/logo.png')
+    )
+
+    watermark_url = request.build_absolute_uri(
+        static('img/logo-marcadagua.png')
+    )
 
     html_string = render_to_string(
         'orcamento/pdf.html',
         {
-            'materiais': materiais
+            'materiais': materiais,
+            'logo_url': logo_url,
+            'watermark_url': watermark_url,
         }
     )
 
-    html = HTML(string=html_string)
-
-    pdf = html.write_pdf()
+    pdf = HTML(
+        string=html_string,
+        base_url=request.build_absolute_uri('/')
+    ).write_pdf()
 
     response = HttpResponse(
         pdf,
         content_type='application/pdf'
     )
 
-    response['Content-Disposition'] = \
-        'filename="orcamento-gessoplac.pdf"'
+    response[
+        'Content-Disposition'
+    ] = 'filename="orcamento-gessoplac.pdf"'
 
     return response

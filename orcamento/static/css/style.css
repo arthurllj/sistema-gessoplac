@@ -6148,3 +6148,57 @@ transform:translateY(0);
 
     break-inside: avoid;
 }
+
+.orcamento-resultado{
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.watermark-orcamento{
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-20deg);
+
+    width: 80%;
+
+    opacity: 0.06;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+.watermark-orcamento img{
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+
+.table-responsive{
+
+    position: relative;
+
+    z-index: 3;
+}
+
+.resultado-topo,
+.alerta-orcamento,
+.resultado-acoes,
+.logo-final{
+
+    position: relative;
+
+    z-index: 3;
+}
