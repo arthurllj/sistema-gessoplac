@@ -1,3 +1,4 @@
+import os
 from urllib import request
 
 from django.shortcuts import render
@@ -7,6 +8,8 @@ from django.templatetags.static import static
 from django.http import HttpResponse
 
 import urllib.parse
+
+from projeto import settings
 
 def whatsapp_global(request):
 
@@ -512,6 +515,13 @@ def contato(request):
     return render(request, 'orcamento/contato.html')
 
 def gerar_pdf(request):
+    logo_path = os.path.join(
+    settings.BASE_DIR,
+    'orcamento',
+    'static',
+    'img',
+    'logo.png'
+)
 
     materiais = request.session.get(
         'materiais',
@@ -527,13 +537,12 @@ def gerar_pdf(request):
     )
 
     html_string = render_to_string(
-        'orcamento/pdf.html',
-        {
-            'materiais': materiais,
-            'logo_url': logo_url,
-            'watermark_url': watermark_url,
-        }
-    )
+    'orcamento/pdf.html',
+    {
+        'materiais': materiais,
+        'logo_path': logo_path,
+    }
+)
 
     pdf = HTML(
         string=html_string,

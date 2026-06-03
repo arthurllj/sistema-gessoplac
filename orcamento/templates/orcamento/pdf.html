@@ -240,7 +240,7 @@ body{
 <div class="watermark">
 
     <img
-        src="{{ logo_url }}"
+        src="file:///{{ logo_path }}"
         alt="Marca d'água">
 
 </div>
@@ -260,8 +260,13 @@ body{
         {% load static %}
 
             <img
-                src="{{ logo_url }}"
-                class="logo"
+                src="file:///{{ logo_path }}"
+                style="
+                position:fixed;
+                top:45%;
+                left:15%;
+                width:500px;
+                opacity:0.08;"
                 alt="GessoPlac">
 
             </td>
