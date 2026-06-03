@@ -286,7 +286,7 @@ def calcular_orcamento(request):
 
                 parafuso_25 = math.ceil((chapas * 40) / 100)
                 
-                massa_kg = math.ceil(area * 1.2)
+                massa_kg = math.ceil(area * 0.55)
                 
                 if massa_kg <= 6:
                     massa_nome = "Massa Pronta 6kg"
@@ -395,8 +395,8 @@ def calcular_orcamento(request):
                 # 0,5 parafusos por m²
                 # multiplicado por dupla fixação
 
-                parafuso_13_real = (area * 0.5) * 2
-                parafuso_13 = math.ceil(parafuso_13_real)
+                parafuso_13_real = area / 0.67 
+                parafuso_13 = max( 1, math.ceil(parafuso_13_real / 100))
                 # ----------------------------------
                 # 40 parafusos GN25 por chapa
                 parafuso_25 = math.ceil((placas * 40) / 100)
@@ -409,7 +409,7 @@ def calcular_orcamento(request):
 
                 tirante = math.ceil(tirante_metros / 3)
 
-                massa_kg = math.ceil(area * 1.2)
+                massa_kg = math.ceil(area * 0.55)
 
                 if massa_kg <= 6:
                     massa_nome = "Massa Pronta 6kg"
