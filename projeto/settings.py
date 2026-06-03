@@ -15,7 +15,13 @@ SECRET_KEY = 'django-insecure-xpuv4!9(y=o(w9pictnkwe52mpxh6+k6fgs0^cw_gu7y+c%t!5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.onrender.com', '192.168.15.7 ', 'localhost'] 
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'gessoplac.onrender.com',
+    'gessoplacudi.com',
+    'www.gessoplacudi.com',
+]
 
 
 # Application definition
