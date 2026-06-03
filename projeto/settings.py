@@ -23,6 +23,7 @@ ALLOWED_HOSTS = [
     'www.gessoplacudi.com',
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 
