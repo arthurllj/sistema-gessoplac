@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
 from orcamento.sitemaps import StaticViewSitemap
+from django.views.generic import TemplateView
 
 sitemaps = {
     'static': StaticViewSitemap,
@@ -19,4 +20,12 @@ urlpatterns = [
         {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'
     ),
+    
+    path(
+    "robots.txt",
+    TemplateView.as_view(
+        template_name="robots.txt",
+        content_type="text/plain"
+    ),
+),
 ]
