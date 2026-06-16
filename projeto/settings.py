@@ -23,15 +23,14 @@ ALLOWED_HOSTS = [
     'www.gessoplacudi.com',
 ]
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-# Application definition
-
-
-SITE_URL = 'https://www.gessoplacudi.com'
 SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 SESSION_COOKIE_SECURE = True
+
+SITE_URL = 'https://www.gessoplacudi.com'
+
+# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
