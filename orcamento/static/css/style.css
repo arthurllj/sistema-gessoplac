@@ -6254,3 +6254,85 @@ transform:translateY(0);
     gap: 10px;
     flex-wrap: wrap;
 }
+
+.cookie-btn,
+.btn-primary {
+    background: #2e7d32;
+    border-color: #2e7d32;
+    color: #fff;
+}
+
+.cookie-btn:hover,
+.btn-primary:hover {
+    background: #1b5e20;
+    border-color: #1b5e20;
+}
+
+/* Sessão de Política de Privacidade */
+
+.privacy-section {
+    padding: 120px 20px 80px;
+    min-height: 100vh;
+}
+
+.privacy-card {
+    max-width: 950px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.privacy-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.privacy-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+.privacy-header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    max-width: 650px;
+    margin: 0 auto 16px;
+    line-height: 1.7;
+}
+
+.privacy-update {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.privacy-item {
+    padding: 28px 0;
+    border-bottom: 1px solid #f1f3f5;
+}
+
+.privacy-item:last-child {
+    border-bottom: none;
+}
+
+.privacy-item h2 {
+    color: #1f2937;
+    font-size: 1.8rem;
+    margin-bottom: 14px;
+}
+
+.privacy-item p {
+    color: #4b5563;
+    line-height: 1.8;
+    font-size: 1rem;
+}
