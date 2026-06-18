@@ -6271,54 +6271,74 @@ transform:translateY(0);
 /* Sessão de Política de Privacidade */
 
 .privacy-section {
-    padding: 120px 20px 80px;
+    background: linear-gradient(
+        90deg,
+        #1d232a 0%,
+        #24303a 50%,
+        #1d232a 100%
+    );
+
     min-height: 100vh;
+    padding: 120px 20px 80px;
 }
 
 .privacy-card {
     max-width: 950px;
     margin: 0 auto;
-    background: #ffffff;
-    border-radius: 24px;
-    padding: 50px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+
+    background: rgba(71, 78, 87, 0.92);
+
+    border-radius: 25px;
+    overflow: hidden;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+    border-top: 3px solid #1fc76a;
 }
 
 .privacy-header {
     text-align: center;
-    margin-bottom: 50px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #e9ecef;
+    padding: 60px 50px 40px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .privacy-header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 16px;
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
 
 .privacy-header p {
+    color: #d4d4d4;
     font-size: 1.1rem;
-    color: #6b7280;
+    line-height: 1.8;
+
     max-width: 650px;
-    margin: 0 auto 16px;
-    line-height: 1.7;
+    margin: 0 auto 25px;
 }
 
 .privacy-update {
     display: inline-block;
-    background: #e8f5e9;
-    color: #2e7d32;
-    padding: 8px 16px;
+
+    background: rgba(31, 199, 106, 0.15);
+    color: #1fc76a;
+
+    padding: 10px 20px;
     border-radius: 50px;
-    font-size: 0.9rem;
+
     font-weight: 600;
 }
 
+.privacy-content {
+    padding: 20px 50px 50px;
+}
+
 .privacy-item {
-    padding: 28px 0;
-    border-bottom: 1px solid #f1f3f5;
+    padding: 35px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .privacy-item:last-child {
@@ -6326,13 +6346,42 @@ transform:translateY(0);
 }
 
 .privacy-item h2 {
-    color: #1f2937;
-    font-size: 1.8rem;
-    margin-bottom: 14px;
+    color: #ffffff;
+
+    font-size: 2rem;
+    font-weight: 700;
+
+    margin-bottom: 20px;
 }
 
 .privacy-item p {
-    color: #4b5563;
-    line-height: 1.8;
-    font-size: 1rem;
+    color: #d4d4d4;
+
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.privacy-item strong {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+
+    .privacy-section {
+        padding: 100px 15px 50px;
+    }
+
+    .privacy-header,
+    .privacy-content {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .privacy-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .privacy-item h2 {
+        font-size: 1.6rem;
+    }
 }
