@@ -6222,3 +6222,35 @@ transform:translateY(0);
 
     overflow:hidden;
 }
+
+/* BANNER DE COOKIES */
+
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: none;
+}
+
+.cookie-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(33, 37, 41, 0.95);
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-content p {
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}

@@ -52,7 +52,7 @@
 
              <a href="{{ whatsapp_site }}"
              rel="noopener"
-             onclick="gtag('event', 'hero_whatsapp')"
+             onclick="typeof gtag === 'function' && gtag('event', 'hero_whatsapp')"
              class="btn btn-outline-light btn-lg">
 
                 <i class="bi bi-whatsapp"></i>
@@ -555,7 +555,7 @@
 
                 <a href= "{{ whatsapp_site }}"
                 rel="noopener"
-                onclick="gtag('event', 'clique_whatsapp_cta')"
+                onclick="typeof gtag === 'function' && gtag('event', 'clique_whatsapp_cta')"
                 class="btn btn-outline-light btn-lg">
              
                  Receber Atendimento Direto
