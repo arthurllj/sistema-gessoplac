@@ -6385,3 +6385,15 @@ transform:translateY(0);
         font-size: 1.6rem;
     }
 }
+
+.cookie-link {
+    color: #22c55e;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cookie-link:hover {
+    color: #16a34a;
+    text-decoration: underline;
+}
