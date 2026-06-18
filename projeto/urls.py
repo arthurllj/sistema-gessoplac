@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
-from django.contrib import admin
-from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
-from orcamento.sitemaps import StaticViewSitemap
 from django.views.generic import TemplateView
+
+from orcamento import views
+from orcamento.sitemaps import StaticViewSitemap
 
 sitemaps = {
     'static': StaticViewSitemap,
@@ -12,6 +12,7 @@ sitemaps = {
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('', include('orcamento.urls')),
 
     path(
@@ -20,12 +21,18 @@ urlpatterns = [
         {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'
     ),
-    
+
     path(
-    "robots.txt",
-    TemplateView.as_view(
-        template_name="robots.txt",
-        content_type="text/plain"
+        'robots.txt',
+        TemplateView.as_view(
+            template_name='robots.txt',
+            content_type='text/plain'
+        ),
     ),
-),
+
+    path(
+        'politica-de-privacidade/',
+        views.politica_privacidade,
+        name='politica_privacidade'
+    ),
 ]

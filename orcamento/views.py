@@ -39,6 +39,8 @@ def orcamento(request):
 def localizacao(request):
     return render(request, "orcamento/localizacao.html")
 
+def politica_privacidade(request):
+    return render(request, 'politica_privacidade.html')
 
 def produtos(request):
     produtos = [
