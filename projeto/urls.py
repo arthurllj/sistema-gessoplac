@@ -11,7 +11,7 @@ sitemaps = {
 }
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("painel-gessoplac-2026/", admin.site.urls),
 
     path('', include('orcamento.urls')),
 
