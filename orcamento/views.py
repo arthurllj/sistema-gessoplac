@@ -389,7 +389,7 @@ def calcular_orcamento(request):
 
                 placas = math.ceil(area * coef_placa)
 
-                tabica = math.ceil(area * 0.35)
+                tabica = math.ceil((area * 2) / 3)
 
                 fita = math.ceil(area * 0.016)
 
