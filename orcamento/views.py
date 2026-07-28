@@ -230,6 +230,8 @@ def calcular_orcamento(request):
             largura = float(request.POST.get("largura"))
 
             area = altura * largura
+            
+            perimetro = (altura + largura) * 2
 
             # =====================================================
             # PAREDE DRYWALL
@@ -389,7 +391,7 @@ def calcular_orcamento(request):
 
                 placas = math.ceil(area * coef_placa)
 
-                tabica = math.ceil((area * 2) / 3)
+                tabica = math.ceil(perimetro / 3)
 
                 fita = math.ceil(area * 0.016)
 
